@@ -1,6 +1,9 @@
 import unittest
+
 from test_Calculator import Calculator
 
+#TestCase 基类，我们创建的测试类需要继承该基类
+# 它可以用来创建新的测试用例
 class TestCaculator(unittest.TestCase):
 
     #使用unitest单元测试重新编写测试用例
@@ -12,7 +15,7 @@ class TestCaculator(unittest.TestCase):
     def test_sub(self):
         c = Calculator(8,5)
         result = c.sub()
-        self.assertEqual(result,3)
+        self.assertEqual(result,1)
 
     def test_mul(self):
         c = Calculator(3,5)
