@@ -1,5 +1,6 @@
 import os
 import unittest
+import time
 from unittest import runner
 from TestRunner import HTMLTestRunner
 
@@ -17,7 +18,9 @@ if __name__ == "__main__":
     # runner.run(suits)
 
     #生成HTML格式的报告
-    fp = open('C:\\Users\\admin\\Desktop\\JMeter\\Selenium\\unittest\\test_report\\result.html','wb')
+    #为了能不覆盖，我们给结果文件添加一个时间的字段
+    now_time = time.strftime("%Y-%m-%d %H:%M:%S")
+    fp = open(r"C:\Users\admin\Desktop\JMeter\Selenium\unittest\test_report\'+now_time+'result.html",'wb')
     runner = HTMLTestRunner(stream = fp,title="百度搜索测试报告",description="运行环境：Windows 10，Chrome浏览器")
     runner.run(suit)
     fp.close()
