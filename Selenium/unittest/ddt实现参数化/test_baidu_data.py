@@ -45,6 +45,7 @@ class TestBaidu(unittest.TestCase):
         self.assertEqual(self.driver.title,search_key+"_百度搜索")
 
     #参数化读取json文件
+    #在路径前面加r，即保持字符原始值的意思。
     @file_data(r'C:\Users\admin\Desktop\JMeter\Selenium\data_file\ddt_data_file.json')
     def test_search4(self,search_key):
         print("第四组测试用例："+search_key)
