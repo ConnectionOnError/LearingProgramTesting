@@ -44,6 +44,12 @@ class TestBaidu(unittest.TestCase):
         self.baidu_search(search_key)
         self.assertEqual(self.driver.title,search_key+"_百度搜索")
 
+    #参数化读取json文件
+    @file_data(r'C:\Users\admin\Desktop\JMeter\Selenium\data_file\ddt_data_file.json')
+    def test_search4(self,search_key):
+        print("第四组测试用例："+search_key)
+        self.baidu_search(search_key)
+        self.assertEqual(self.driver.title,search_key+"_百度搜索")
     @classmethod
     def tearDownClass(cls) -> None:
         cls.driver.quit()
